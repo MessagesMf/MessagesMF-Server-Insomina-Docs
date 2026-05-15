@@ -1,0 +1,357 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: API Endpoint
+meta:
+  id: wrk_40c750002db141c0b92da4489269f852
+  created: 1775878075784
+  modified: 1778730834014
+  description: ""
+collection:
+  - name: Auth
+    meta:
+      id: fld_ab07b548e14d486082919a4c81a78555
+      created: 1776213652927
+      modified: 1778730086882
+      sortKey: -1776213652927
+      description: ""
+    children:
+      - url: "{{ _.base_url }}/auth/register"
+        name: Register
+        meta:
+          id: req_7e88a55f8b64417f9ce3ca28ee6c2942
+          created: 1776192479751
+          modified: 1778782208106
+          isPrivate: false
+          description: ""
+          sortKey: -1776213934180
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"name":"jorge",
+            	"username":"jorgrefloid",
+            	"email":"ihateniggres@gmail.com",
+            	"password":"Brelilcik2."
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/auth/login"
+        name: Login
+        meta:
+          id: req_b67b6a6fc02a4a29ad1ca01ba06a4d6f
+          created: 1776213656927
+          modified: 1778783798059
+          isPrivate: false
+          description: ""
+          sortKey: -1776213934080
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"email":"ihateniggres@gmail.com",
+            	"password":"Brelilcik2."
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          disabled: true
+          token: ""
+          prefix: ""
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Post
+    meta:
+      id: fld_ab48a5b060704178be9a478bb8821478
+      created: 1778728821761
+      modified: 1778728859216
+      sortKey: -1776213653027
+      description: ""
+    children:
+      - url: "{{ _.base_url }}/posts/create"
+        name: Create
+        meta:
+          id: req_3036446c0a75415eba12c0eb3ca4e982
+          created: 1778523110370
+          modified: 1778782196566
+          isPrivate: false
+          description: ""
+          sortKey: -1778728840853
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"dedicated":"{% faker 'randomFullName' %}",
+            	"anonymity":true,
+            	"content":"mensaje de prueba jaja xd"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: "{{ _.token }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/posts/delete/1"
+        name: Delete
+        meta:
+          id: req_efab29a20a9b4924bb6cea5dfe491e95
+          created: 1778729388174
+          modified: 1778782126357
+          isPrivate: false
+          description: ""
+          sortKey: -1778728840953
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: "{{ _.token }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/posts/get"
+        name: Get All
+        meta:
+          id: req_22255e3d3c7e491bbcf1b9ff0459f272
+          created: 1778729645393
+          modified: 1778782073280
+          isPrivate: false
+          description: ""
+          sortKey: -1778729645393
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: "{{ _.token }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/posts/get/"
+        name: Get By Id
+        meta:
+          id: req_d11af54bf9be4410bedaf29b033558ac
+          created: 1778729817396
+          modified: 1778782119975
+          isPrivate: false
+          description: ""
+          sortKey: -1778729243173
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: "{{ _.token }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/posts/update/2"
+        name: Update
+        meta:
+          id: req_3bc32b371c1342a3b04f2b5cf913d6c6
+          created: 1778729885925
+          modified: 1778782201080
+          isPrivate: false
+          description: ""
+          sortKey: -1777471387516.5
+        method: PATCH
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"dedicated":"{% faker 'randomFullName' %}",
+            	"anonymity":true,
+            	"content":"i hate niggers"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: "{{ _.token }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: User
+    meta:
+      id: fld_ff1bf4961d6542f5ba05c011ab231c28
+      created: 1778779236005
+      modified: 1778779236005
+      sortKey: -1778779236005
+      description: ""
+    children:
+      - url: "{{ _.base_url }}/users/get"
+        name: Get All
+        meta:
+          id: req_c28a48e93e2b40a488dacee7468dc627
+          created: 1778779241674
+          modified: 1778782085422
+          isPrivate: false
+          description: ""
+          sortKey: -1778782085347
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: "{{ _.token }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/users/get/1"
+        name: Get By Id
+        meta:
+          id: req_3e518062946f43d1b886b3d5f3b74c3b
+          created: 1778781884845
+          modified: 1778782087715
+          isPrivate: false
+          description: ""
+          sortKey: -1778782085247
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: "{{ _.token }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/users/update/1"
+        name: Update
+        meta:
+          id: req_a2dc714630b14391ad49164671e54157
+          created: 1778782270153
+          modified: 1778782705987
+          isPrivate: false
+          description: ""
+          sortKey: -1778782270153
+        method: PATCH
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	
+            	"email":"jorgefloyd999omg67"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: "{{ _.token }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_b17c2c2970e239c1160fdfa6ab7876c1ab11f182
+    created: 1775878075788
+    modified: 1775878075788
+environments:
+  name: Base Environment
+  meta:
+    id: env_b17c2c2970e239c1160fdfa6ab7876c1ab11f182
+    created: 1775878075786
+    modified: 1778784896216
+    isPrivate: false
+  data:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJpaGF0ZW5pZ2dyZXNAZ21haWwuY29tIiwiaWF0IjoxNzc4Nzg0ODgzLCJleHAiOjE3Nzg4NzEyODN9.KKiWcTGvGS2zC-KoraD8d8IWFosgBe72rbQrJzsiH_g
+    base_url: localhost:3000
